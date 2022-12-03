@@ -4,12 +4,34 @@
     <title>EncounterBooks</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header class="header">
+      <h2 class="header_logo">
+        <a href="/">Encounter Books<i class="fas fa-book"></i></a>
+      </h2>
+      <div class="user_info">
+        <%# ユーザ管理機能実装後に %>
+        <%# user_signed_in? %>
+          <%#br><%#= link_to current_user.nickname, "#", class: "post" %><%#/br>
+          <%# パスが合っているか確認 %>
+          <%#= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post" %>
+        <%# else %>  
+          <%= link_to "ログイン", "#", class: "post" %>
+          <%= link_to "新規登録", "#", class: "post" %>
+        <%# end %>
+      </div>
+    </header>
     <%= yield %>
+    <footer>
+      <p>
+        Encounter Books<i class="fas fa-book"></i>
+      </p>
+    </footer>
   </body>
 </html>

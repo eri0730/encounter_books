@@ -1,0 +1,46 @@
+<div class="main">
+  <div class="title-contents">
+    <%= image_tag "AdobeStock_312787080.jpeg", class: "title-pict" %>
+    <h1 class="title-logo">
+      Encounter Books
+    </h1>
+  </div>
+
+  <div class="contents">
+
+    <p class="service-explain">
+      おすすめ本の一覧
+    </p>
+
+    <%# @boks.each do |book| %>
+      <%= render partial: "book" %>
+      <%# 投稿機能実装後に上の行を消し、下行のコメントアウトをはずす %>
+      <%#= render partial: "book", locals: { book: book } %>
+    <%# end %>
+
+  </div>
+
+
+
+  <div class="items">
+    <div class="like-btn square">
+      <div class="btn-icon">
+        <i class="fas fa-star", style="color: #eceaea;"></i>
+      </div>
+      <div class="btn-text">
+        読みたい
+        <%# お気に入り %>
+      </div>
+    </div>
+    <div class="recommend-btn square">
+      <div class="btn-icon">
+        <i class="fas fa-book", style="color: #eceaea;"></i>
+      </div>
+      <div class="btn-text">
+        <%# おすすめ本<br>投稿 %>
+        投稿する
+      </div>
+    </div>
+  </div>
+
+</div>
