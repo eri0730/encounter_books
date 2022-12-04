@@ -1,24 +1,78 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| nickname           | string | null:false                |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+  
+### Association
 
-* Ruby version
+- has_many :books
+- has_many :favorites
+- has_many :favorite_books, through: :favorites, source: :book
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+## books テーブル
 
-* Database initialization
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| title            | string     | null: false                    |
+| author           | string     | null: false                    |
+| summary          | text       | null: false                    |
+| recommend        | text       | null: false                    |
+| user             | references | null: false, foreign_key: true |
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+- belongs_to :user
+- has_many :book_tag_relations, dependent: :destroy
+- has_many :tags, through: :book_tag_relations, dependent: :destroy
+- has_many :favorites, dependent: :destroy
 
-* Deployment instructions
 
-* ...
+
+## tags テーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| tag_name  | string     | null: false, uniqueness: true  |
+| item      | references | null: false, foreign_key: true |
+
+### Association
+
+- has_many :book_tag_relations
+- has_many :books, through: :book_tag_relations
+
+
+
+## book_tag_relations テーブル
+
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| book             | references | foreign_key: true              |
+| tag              | references | foreign_key: true              |
+
+### Association
+
+- belongs_to :book
+- belongs_to :tag
+
+
+
+## favoritesテーブル
+
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| user           | references | null: false, foreign_key: true |
+| book           | references | null: false, foreign_key: true |
+
+<!-- add_index :favorites, [:user_id, :book_id], unique: true  # 同じユーザが2回お気に入りできないようにする -->    
+
+### Association
+
+- belongs_to :user
+- belongs_to :book
