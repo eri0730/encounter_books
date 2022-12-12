@@ -22,7 +22,7 @@
           <%# パスが合っているか確認 %>
           <%#= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post" %>
         <%# else %>  
-          <%= link_to "ログイン", "#", class: "post" %>
+          <%= link_to "ログイン", new_user_registration_path, class: "post" %>
           <%= link_to "新規登録", "#", class: "post" %>
         <%# end %>
       </div>
