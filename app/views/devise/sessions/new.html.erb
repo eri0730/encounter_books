@@ -1,0 +1,30 @@
+<div class="sessions-main">
+  <div class="inner">
+    <div class="form__wrapper">
+
+      <h3 class="page-heading">
+        ユーザーログイン
+      </h3>
+
+      <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+
+        <div class="input-form">
+          <div class="field">
+            <%= f.label :email, "メールアドレス" %><br />
+            <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email", class:"input_text" %>
+          </div>
+          <div class="field">
+            <%= f.label :password, "パスワード" %><br />
+            <%= f.password_field :password, id:"user_password", autocomplete: "new-password", class:"input_text" %>
+          </div>
+          <div class="actions">
+            <%= f.submit "ログイン", class: :form__btn  %>
+          </div>
+
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>  
+
