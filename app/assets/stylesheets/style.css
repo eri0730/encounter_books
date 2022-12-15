@@ -227,3 +227,26 @@ footer p {
   font-size: 14px;
   padding: 5px;
 }
+
+
+/********************************************
+ 投稿画面
+*********************************************/
+
+.title-author_text {
+  height: 35px;
+  width: 500px;
+  padding: 5px;
+}
+
+.summary_text {
+  height: 90px;
+  width: 500px;
+  padding: 5px;
+}
+
+.recommend_text {
+  height: 80px;
+  width: 500px;
+  padding: 5px;
+}
