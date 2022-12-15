@@ -6,7 +6,7 @@ class Book < ApplicationRecord
   validates :title, presence: true
   validates :author, presence: true
   validates :summary, presence: true
-  validates :recommend, presence: true, length: { maximum: 80 }
+  validates :recommend, presence: true
   validates :image, presence: true
 
 end
