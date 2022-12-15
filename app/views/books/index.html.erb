@@ -7,17 +7,10 @@
   </div>
 
   <div class="contents">
-
     <p class="service-explain">
       おすすめ本の一覧
     </p>
-
-    <%# @books.each do |book| %>
-      <%= render partial: "book" %>
-      <%# 投稿機能実装後に上の行を消し、下行のコメントアウトをはずす %>
-      <%#= render partial: "book", locals: { book: book } %>
-    <%# end %>
-
+    <%= render partial: "book", collection: @books %>
   </div>
 
 

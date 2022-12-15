@@ -128,8 +128,9 @@ footer p {
   display: flex;
   width: 730px;
   height: 320px;
-  margin: 0 auto 30px;
+  margin: 0 auto 40px;
   background-color: rgb(243, 238, 220);
+  /*background-color: rgb(233, 233, 235);*/
 }
 
 .content_img {
