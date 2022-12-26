@@ -1,0 +1,46 @@
+<div class="form-main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h3 class="page-heading">
+        おすすめ本の情報を入力
+      </h3>
+      <div class="input-form">
+
+        <%= form_with model: @book, local: true do |f|%>
+        <%= render 'shared/error_messages', model: @book %>
+
+          <div class="field">
+            <%= f.label :image, "本の画像" %><br />
+            <%= f.file_field :image, id:"book_image" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :title, "タイトル" %><br />
+            <%= f.text_field :title, id:"book_title", class:"title-author_text" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :author, "著者" %><br />
+            <%= f.text_field :author, id:"book_author", class:"title-author_text" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :summary, "ストーリー" %><br />
+            <%= f.text_area :summary, class: :form__text, id:"book-summary", placeholder:"本のストーリーを入力（200文字まで）", maxlength:"200", class:"summary_text" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :recommend, "おすすめ文" %><br />
+            <%= f.text_area :recommend, class: :form__text, id:"book_recommend", placeholder:"本のおすすめ文を入力（80文字まで）", maxlength:"80", class:"recommend_text" %>
+          </div>
+
+
+          <div class="actions">
+            <%= f.submit "投稿する", class: :form__btn  %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -104,7 +104,7 @@ footer p {
   position: absolute;
   bottom: 35px;
   right: 35px;
-  font-size: 38px;
+  font-size: 39px;
   color: #040404;
 }
 
@@ -122,14 +122,16 @@ footer p {
 .service-explain {
   font-size: 20px;
   padding: 10px 10px 20px;
+  margin: 5px 0;
 }
 
 .content {
   display: flex;
   width: 730px;
   height: 320px;
-  margin: 0 auto 30px;
+  margin: 0 auto 40px;
   background-color: rgb(243, 238, 220);
+  /*background-color: rgb(233, 233, 235);*/
 }
 
 .content_img {
@@ -225,5 +227,28 @@ footer p {
 .btn-text {
   color: #eceaea;
   font-size: 14px;
+  padding: 5px;
+}
+
+
+/********************************************
+ 投稿画面
+*********************************************/
+
+.title-author_text {
+  height: 35px;
+  width: 500px;
+  padding: 5px;
+}
+
+.summary_text {
+  height: 90px;
+  width: 500px;
+  padding: 5px;
+}
+
+.recommend_text {
+  height: 80px;
+  width: 500px;
   padding: 5px;
 }
