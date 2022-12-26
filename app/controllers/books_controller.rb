@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!, only: :new
-  
+
   def index
     @books = Book.all.order('created_at DESC')
   end
@@ -16,7 +16,6 @@ class BooksController < ApplicationController
     else
       render :new
     end
-
   end
 
   private
@@ -24,6 +23,4 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title, :author, :summary, :recommend, :image).merge(user_id: current_user.id)
   end
-
-
 end

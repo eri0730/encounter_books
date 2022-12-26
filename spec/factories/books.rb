@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :book do
-    title {Faker::Book.title}
-    author {Faker::Book.author}
-    summary {Faker::Lorem.sentence}
-    recommend {Faker::Lorem.sentence}
+    title { Faker::Book.title }
+    author { Faker::Book.author }
+    summary { Faker::Lorem.sentence }
+    recommend { Faker::Lorem.sentence }
     association :user
 
     after(:build) do |book|

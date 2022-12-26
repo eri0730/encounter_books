@@ -8,5 +8,4 @@ class Book < ApplicationRecord
   validates :author, presence: true
   validates :summary, presence: true
   validates :recommend, presence: true
-
 end
