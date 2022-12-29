@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!, only: :new
+  before_action :authenticate_user!, only: [:new, :edit]
   before_action :set_book, only: [:show, :edit, :update]
-
+  before_action :move_to_index, only: :edit
 
   def index
     @books = Book.all.order('created_at DESC')
@@ -27,7 +27,6 @@ class BooksController < ApplicationController
   end
   
   def update
-    # @book = Book.find(params[:id])
     if @book.update(book_params)
       redirect_to book_path(@book.id)
     else
@@ -44,5 +43,11 @@ class BooksController < ApplicationController
   def set_book
     @book = Book.find(params[:id])
   end
+
+  def move_to_index
+    unless @book.user.id == current_user.id
+      redirect_to action: :index
+    end
+  end 
 
 end
