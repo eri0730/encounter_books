@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :set_book, only: [:show, :edit, :update]
   before_action :move_to_index, only: :edit
 
@@ -26,12 +26,6 @@ class BooksController < ApplicationController
   def edit
   end
 
-  def destroy
-    book = Book.find(params[:id])
-    book.destroy
-    redirect_to root_path
-  end  
-
   def update
     if @book.update(book_params)
       redirect_to book_path(@book.id)
@@ -39,6 +33,16 @@ class BooksController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    book = Book.find(params[:id])
+    if book.user == current_user
+      book.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
+  end  
 
   private
 
