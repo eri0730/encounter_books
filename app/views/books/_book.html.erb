@@ -14,9 +14,15 @@
         <div class="content_tag">
           #笑える #感動
         </div>
-        <div class="favorite-btn">
-          <i class="fas fa-star"></i>
-        </div>
+
+        <%# 投稿者本人の場合はお気に入りボタンは表示しない 以下どちらもエラーが出る %>
+        <%# <% unless current_user.id == book.user_id %>
+        <%# <% unless user_signed_in? || current_user.id == book.user_id %>
+          <div class="favorite-btn">
+            <i class="fas fa-star"></i>
+          </div>
+        <%# <% end %>
+
       <% end %>
 
     </div>
