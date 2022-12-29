@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!, only: :new
-  before_action :set_book, only: [:show, :edit]
+  before_action :set_book, only: [:show, :edit, :update]
 
 
   def index
@@ -27,6 +27,12 @@ class BooksController < ApplicationController
   end
   
   def update
+    # @book = Book.find(params[:id])
+    if @book.update(book_params)
+      redirect_to book_path(@book.id)
+    else
+      render :edit
+    end
   end  
 
   private

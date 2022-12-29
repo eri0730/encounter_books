@@ -6,7 +6,7 @@
       </h3>
       <div class="input-form">
         <%= form_with model: @book, local: true do |f|%>
-        <%#= render 'shared/error_messages', model: @book %>
+        <%= render 'shared/error_messages', model: @book %>
 
           <div class="field">
             <%= f.label :image, "本の画像" %><br />
