@@ -1,17 +1,24 @@
 <div class="content">
-  <%= link_to image_tag(book.image, class: :content_img ), "#" %>
-  <div class="content_body">
-    <div class="content_title">
-      <%= book.title %>
+
+    <%= link_to image_tag(book.image, class: :content_img ), book_path(book) %>
+
+    <div class="content_body">
+
+      <%= link_to book_path(book.id) do %>
+        <div class="content_title">
+          <%= book.title %>
+        </div>
+        <div class="content_text">
+          <%= book.recommend %>
+        </div>
+        <div class="content_tag">
+          #笑える #感動
+        </div>
+        <div class="favorite-btn">
+          <i class="fas fa-star"></i>
+        </div>
+      <% end %>
+
     </div>
-    <div class="content_text">
-      <%= book.recommend %>
-    </div>
-    <div class="content_tag">
-      #笑える #感動
-    </div>
-    <div class="favorite-btn">
-      <i class="fas fa-star"></i>
-    </div>
-  </div>
+
 </div>
