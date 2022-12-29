@@ -297,7 +297,7 @@ footer p {
 }
 
 .book__summary {
-  font-size: 18px;
+  font-size: 17px;
   color: rgb(66, 64, 64);
   margin-top: 10px;
   padding: 10px 0;
@@ -307,7 +307,7 @@ footer p {
   font-size: 18px;
   /* color: rgb(75, 73, 73); */
   color: rgb(66, 64, 64);
-  margin: 25px 0 40px;
+  margin: 25px 0 50px;
   padding: 10px;
   background-color: white;
   border-radius: 10px;
