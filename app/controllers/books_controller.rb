@@ -25,14 +25,14 @@ class BooksController < ApplicationController
 
   def edit
   end
-  
+
   def update
     if @book.update(book_params)
       redirect_to book_path(@book.id)
     else
       render :edit
     end
-  end  
+  end
 
   private
 
@@ -45,9 +45,8 @@ class BooksController < ApplicationController
   end
 
   def move_to_index
-    unless @book.user.id == current_user.id
-      redirect_to action: :index
-    end
-  end 
+    return if @book.user.id == current_user.id
 
+    redirect_to action: :index
+  end
 end
