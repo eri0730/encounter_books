@@ -121,8 +121,10 @@ footer p {
 
 .service-explain {
   font-size: 20px;
+  font-weight: bold;
   padding: 10px 10px 20px;
   margin: 5px 0;
+  color: rgb(57, 56, 56);
 }
 
 .content {
@@ -149,12 +151,15 @@ footer p {
   padding: 5px;
   font-size: 21px;
   font-weight: bold;
+  color: rgb(57, 56, 56);
+  /* color: rgb(66, 64, 64); */
 }
 
 .content_text {
   height: 105px;
   padding: 5px;
   font-size: 16px;
+  color: rgb(57, 56, 56);
 }
 
 .content_tag {
@@ -279,27 +284,29 @@ footer p {
 .book__title {
   font-size: 27px;
   font-weight: bold;
-  color: rgb(75, 73, 73);
+  /* color: rgb(75, 73, 73); */
+  color: rgb(66, 64, 64);
   margin-bottom: 12px;
 
 }
 
 .book__author {
   font-size: 22px;
-  color: rgb(75, 73, 73);
+  color: rgb(66, 64, 64);
   margin-bottom: 15px;
 }
 
 .book__summary {
   font-size: 18px;
-  color: rgb(75, 73, 73);
+  color: rgb(66, 64, 64);
   margin-top: 10px;
   padding: 10px 0;
 }
 
 .book__recommend {
   font-size: 18px;
-  color: rgb(75, 73, 73);
+  /* color: rgb(75, 73, 73); */
+  color: rgb(66, 64, 64);
   margin: 25px 0 40px;
   padding: 10px;
   background-color: white;
@@ -316,7 +323,8 @@ footer p {
 
 .post-user {
   font-size: 18px;
-  color: rgb(75, 73, 73);
+  /* color: rgb(75, 73, 73); */
+  color: rgb(66, 64, 64);
 }
 
 .footer__btn {
