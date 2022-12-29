@@ -1,17 +1,13 @@
 <div class="main">
   <div class="book-content">
 
-    <div class="book_image">
-      <%#= image_tag @book.image %>
-    </div>
+    <%= image_tag @book.image, class: "book_image" %>
     <div class="book_body">
       <div class="book__title">
-        本のタイトル
-        <%#= @book.title %>
+        <%= @book.title %>
       </div>
       <div class="book__author">
-        著者
-        <%#= @book.author %>
+        <%= @book.author %>
       </div>
       <div class="content_tag">
         #笑える #感動
@@ -22,15 +18,13 @@
         </div>
       <%# end %>
       <div class="book__summary">
-        あらすじ
-        <%#= @book.summary %>
+        <%= @book.summary %>
       </div>
       <div class="book__recommend">
-        おすすめ文
-        <%#= @book.recommend %>
+        <%= @book.recommend %>
       </div>
       <div class="book_body_footer">
-        <div class="post-user">投稿者 ユーザー名<%#= @book.user.name %></div>
+        <div class="post-user">投稿者 <%= @book.user.nickname %></div>
         <%# if user_signed_in? && current_user.id == @book.user_id %>
           <div class="footer-btn">
             <%= link_to "編集", "#", class: "edit footer__btn " %>
