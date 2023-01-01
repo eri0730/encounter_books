@@ -17,7 +17,7 @@
       </h2>
       <div class="user_info">
         <% if user_signed_in? %>
-          <strong><%= link_to current_user.nickname, "#", class: "post" %></strong>
+          <strong><%= link_to current_user.nickname, user_path(current_user.id), class: "post" %></strong>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post" %>
         <% else %>  
           <%= link_to "ログイン", new_user_session_path, class: "post" %>

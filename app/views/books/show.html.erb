@@ -28,7 +28,8 @@
         <%= @book.recommend %>
       </div>
       <div class="book_body_footer">
-        <div class="post-user">投稿者 <%= @book.user.nickname %></div>
+   
+        <%= link_to "投稿者 #{@book.user.nickname}", user_path(@book.user), class: "post-user" %>
 
         <% if user_signed_in? && current_user.id == @book.user_id %>
           <div class="footer-btn">
@@ -39,7 +40,6 @@
 
       </div>
     </div>
-
   </div>
 </div>
 
