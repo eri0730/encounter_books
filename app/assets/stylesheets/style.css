@@ -137,13 +137,13 @@ footer p {
 }
 
 .content_img {
-  width: 270px;
-  height: 270px;
-  margin: 25px 35px 25px 45px;
+  width: 225px;
+  height: 280px;
+  margin: 20px 40px 20px 50px;
 }
 
 .content_body {
-  margin: 40px 25px 40px 0;
+  margin: 40px 35px 40px 0;
 }
 
 .content_title {
@@ -269,8 +269,8 @@ footer p {
 }
 
 .book_image {
-  height: 300px;
-  width: 300px;
+  height: 380px;
+  width: 280px;
   margin: 0 auto;
   display: block;
 }
@@ -325,6 +325,7 @@ footer p {
   font-size: 18px;
   /* color: rgb(75, 73, 73); */
   color: rgb(66, 64, 64);
+  text-decoration: underline;
 }
 
 .footer__btn {
