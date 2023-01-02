@@ -11,9 +11,11 @@
         <div class="content_text">
           <%= book.recommend %>
         </div>
-        <div class="content_tag">
-          #笑える #感動
-        </div>
+        <% if book.tags.present? %>
+          <div class="content_tag">
+            <%= "##{book.tags.first&.tag_name}" %>
+          </div>
+        <% end %>  
 
         <%# 投稿者本人の場合はお気に入りボタンは表示しない 以下どちらもエラーが出る %>
         <%# <% unless current_user.id == book.user_id %>
