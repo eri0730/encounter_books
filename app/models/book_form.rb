@@ -37,6 +37,6 @@ class BookForm
     tag.save if tag_name.present?
     book.update(params)
     BookTagRelation.create(book_id: book.id, tag_id: tag.id) if tag_name.present?
-
   end
+
 end
