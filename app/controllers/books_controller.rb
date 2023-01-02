@@ -25,10 +25,20 @@ class BooksController < ApplicationController
   end
 
   def edit
+    # @bookから情報をハッシュとして取り出し、@book_formとしてインスタンス生成する
+    book_attributes = @book.attributes
+    @book_form = BookForm.new(book_attributes)
   end
 
   def update
-    if @book.update(book_params)
+    # paramsの内容を反映したインスタンスを生成する
+    @book_form = BookForm.new(book_form_params)
+
+    # 画像を選択し直していない場合は、既存の画像をセットする
+    @book_form.image ||= @book.image.blob
+
+    if @book_form.valid?
+      @book_form.update(book_form_params, @book)
       redirect_to book_path(@book.id)
     else
       render :edit
