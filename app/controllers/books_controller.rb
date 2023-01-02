@@ -28,6 +28,9 @@ class BooksController < ApplicationController
     # @bookから情報をハッシュとして取り出し、@book_formとしてインスタンス生成する
     book_attributes = @book.attributes
     @book_form = BookForm.new(book_attributes)
+
+    # 編集画面にタグの情報が表示されるようにする
+    @book_form.tag_name = @book.tags.first&.tag_name
   end
 
   def update
