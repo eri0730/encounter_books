@@ -5,7 +5,8 @@ class BookForm
   attr_accessor(
     :title, :author, :summary, 
     :recommend, :image, :user_id,
-    :id, :created_at, :updated_at
+    :id, :created_at, :updated_at,
+    :tag_name
   )
   with_options presence: true do
     validates :image
@@ -16,7 +17,10 @@ class BookForm
   end
 
   def save
-    Book.create(title: title, author: author, summary: summary, recommend: recommend, image: image, user_id: user_id)
+    book = Book.create(title: title, author: author, summary: summary, recommend: recommend, image: image, user_id: user_id)
+    tag = Tag.where(tag_name: tag_name).first_or_initialize
+    tag.save
+    BookTagRelation.create(book_id: book.id, tag_id: tag.id)
   end
 
   def update(params, book)
