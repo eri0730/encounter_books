@@ -13,7 +13,9 @@
         </div>
         <% if book.tags.present? %>
           <div class="content_tag">
-            <%= "##{book.tags.first&.tag_name}" %>
+            <% book.tags.each do |tag| %>
+              #<%= tag&.tag_name %>
+            <% end %>
           </div>
         <% end %>  
 

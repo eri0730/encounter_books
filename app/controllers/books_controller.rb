@@ -13,8 +13,9 @@ class BooksController < ApplicationController
 
   def create
     @book_form = BookForm.new(book_form_params)
+    tag_list = params[:book_form][:tag_name].split(',')
     if @book_form.valid?
-      @book_form.save
+      @book_form.save(tag_list)
       redirect_to root_path
     else
       render :new
@@ -30,7 +31,8 @@ class BooksController < ApplicationController
     @book_form = BookForm.new(book_attributes)
 
     # 編集画面にタグの情報が表示されるようにする
-    @book_form.tag_name = @book.tags.first&.tag_name
+    @book_form.tag_name = @book.tags.pluck(:tag_name).join(',')
+  
   end
 
   def update
@@ -40,8 +42,9 @@ class BooksController < ApplicationController
     # 画像を選択し直していない場合は、既存の画像をセットする
     @book_form.image ||= @book.image.blob
 
+    tag_list = params[:book_form][:tag_name].split(',')
     if @book_form.valid?
-      @book_form.update(book_form_params, @book)
+      @book_form.update(book_form_params, @book, tag_list)
       redirect_to book_path(@book.id)
     else
       render :edit

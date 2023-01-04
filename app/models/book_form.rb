@@ -16,14 +16,19 @@ class BookForm
     validates :recommend
   end
 
-  def save
+  def save(tag_list)
     book = Book.create(title: title, author: author, summary: summary, recommend: recommend, image: image, user_id: user_id)
-    tag = Tag.where(tag_name: tag_name).first_or_initialize
-    tag.save
-    BookTagRelation.create(book_id: book.id, tag_id: tag.id)
+
+    tag_list.each do |tag_name|
+      tag = Tag.where(tag_name: tag_name).first_or_initialize
+      tag.save
+      
+      BookTagRelation.create(book_id: book.id, tag_id: tag.id)
+    end  
+
   end
 
-  def update(params, book)
+  def update(params, book, tag_list)
     #一度タグの紐付けを消す
     book.book_tag_relations.destroy_all
 
@@ -31,12 +36,15 @@ class BookForm
     tag_name = params.delete(:tag_name)
 
     #もしタグの情報がすでに保存されていればインスタンスを取得、無ければインスタンスを新規作成
-    tag = Tag.where(tag_name: tag_name).first_or_initialize if tag_name.present?
+    tag_list.each do |tag_name|
+      tag = Tag.where(tag_name: tag_name).first_or_initialize if tag_name.present?
 
-    #タグを保存
-    tag.save if tag_name.present?
-    book.update(params)
-    BookTagRelation.create(book_id: book.id, tag_id: tag.id) if tag_name.present?
+      #タグを保存
+      tag.save if tag_name.present?
+      book.update(params)
+      BookTagRelation.create(book_id: book.id, tag_id: tag.id) if tag_name.present?
+    end  
+    
   end
 
 end
