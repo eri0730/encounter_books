@@ -20,7 +20,6 @@ RSpec.describe Tag, type: :model do
         @tag.tag_name = ''
         expect(@tag).to be_valid
       end
-
     end
 
     context 'タグの投稿ができない場合' do
@@ -29,7 +28,7 @@ RSpec.describe Tag, type: :model do
         another_user = FactoryBot.build(:tag)
         another_user.tag_name = @tag.tag_name
         another_user.valid?
-        expect(another_user.errors.full_messages).to include("Tag name has already been taken")
+        expect(another_user.errors.full_messages).to include('Tag name has already been taken')
       end
     end
   end

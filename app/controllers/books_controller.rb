@@ -32,7 +32,6 @@ class BooksController < ApplicationController
 
     # 編集画面にタグの情報が表示されるようにする
     @book_form.tag_name = @book.tags.pluck(:tag_name).join(',')
-  
   end
 
   def update
