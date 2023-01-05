@@ -8,12 +8,14 @@ class BooksController < ApplicationController
   end
 
   def new
-    @book = Book.new
+    @book_form = BookForm.new
   end
 
   def create
-    @book = Book.new(book_params)
-    if @book.save
+    @book_form = BookForm.new(book_form_params)
+    tag_list = params[:book_form][:tag_name].split(',')
+    if @book_form.valid?
+      @book_form.save(tag_list)
       redirect_to root_path
     else
       render :new
@@ -24,10 +26,24 @@ class BooksController < ApplicationController
   end
 
   def edit
+    # @bookから情報をハッシュとして取り出し、@book_formとしてインスタンス生成する
+    book_attributes = @book.attributes
+    @book_form = BookForm.new(book_attributes)
+
+    # 編集画面にタグの情報が表示されるようにする
+    @book_form.tag_name = @book.tags.pluck(:tag_name).join(',')
   end
 
   def update
-    if @book.update(book_params)
+    # paramsの内容を反映したインスタンスを生成する
+    @book_form = BookForm.new(book_form_params)
+
+    # 画像を選択し直していない場合は、既存の画像をセットする
+    @book_form.image ||= @book.image.blob
+
+    tag_list = params[:book_form][:tag_name].split(',')
+    if @book_form.valid?
+      @book_form.update(book_form_params, @book, tag_list)
       redirect_to book_path(@book.id)
     else
       render :edit
@@ -46,8 +62,8 @@ class BooksController < ApplicationController
 
   private
 
-  def book_params
-    params.require(:book).permit(:title, :author, :summary, :recommend, :image).merge(user_id: current_user.id)
+  def book_form_params
+    params.require(:book_form).permit(:title, :author, :summary, :recommend, :tag_name, :image).merge(user_id: current_user.id)
   end
 
   def set_book

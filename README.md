@@ -40,7 +40,6 @@
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
 | tag_name  | string     | null: false, uniqueness: true  |
-| item      | references | null: false, foreign_key: true |
 
 ### Association
 
