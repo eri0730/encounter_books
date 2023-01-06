@@ -182,30 +182,13 @@ footer p {
   margin: 5px 0 0 5px;
 }
 
-.fa-star {
+.like {
   color: #bdbdbd;
-  /*color: #f8dc3e;*/
 }
 
-/*.favorite-btn {
-  height: 40px;
-  width: 150px;
-  font-size: 18px;
-  border: 1px solid #bdbdbd;
-  border-radius: 20px;
-  text-align: center;
-  line-height: 40px;
-}*/
-
-
-/*.fa-star {
-  color: #bdbdbd;
-  /* text-shadow: 1px 1px 0 #bdbdbd,
-    -1px 1px 0 #bdbdbd,
-    1px -1px 0 #bdbdbd,
-    -1px -1px 0 #bdbdbd; 
-} */
-
+.unlike {
+  color: #f8dc3e;
+}
 
 .items {
   display: flex;
