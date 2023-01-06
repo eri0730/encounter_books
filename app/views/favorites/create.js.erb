@@ -1,0 +1,2 @@
+$("#favorite-<%= @book.id %>").html("<%= escape_javascript(render('favorites/unfavorite', book: @book)) %>");
+
