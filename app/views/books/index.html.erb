@@ -16,14 +16,16 @@
 
   <div class="items">
    
-    <%= link_to(mypage_user_path(current_user.id), class: 'like-btn square') do %>
-      <div class="btn-icon">
-        <i class="fas fa-star", style="color: #eceaea;"></i>
-      </div>
-      <div class="btn-text">
-        読みたい
-      </div>
-    <% end %>
+    <% if user_signed_in? %>
+      <%= link_to(mypage_user_path(current_user.id), class: 'like-btn square') do %>
+        <div class="btn-icon">
+          <i class="fas fa-star", style="color: #eceaea;"></i>
+        </div>
+        <div class="btn-text">
+          読みたい
+        </div>
+      <% end %>
+    <% end %>  
 
     <%= link_to(new_book_path, class: 'recommend-btn square') do %>
       <div class="btn-icon">
