@@ -1,0 +1,10 @@
+<div class="main">
+  <div class="contents">
+    <p class="service-explain">
+        <%= "#{current_user.nickname}さんの読みたい本の一覧"%>
+    </p>
+
+    <%= render partial: "books/book", collection: @books %>
+
+  </div>
+</div>
