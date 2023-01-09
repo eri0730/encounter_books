@@ -16,7 +16,6 @@
 
   <div class="items">
    
-    <%# div class="like-btn square" %>
     <%= link_to("#", class: 'like-btn square') do %>
       <div class="btn-icon">
         <i class="fas fa-star", style="color: #eceaea;"></i>
@@ -25,14 +24,12 @@
         読みたい
       </div>
     <% end %>
-    <%# /div %>
 
     <%= link_to(new_book_path, class: 'recommend-btn square') do %>
       <div class="btn-icon">
         <i class="fas fa-book", style="color: #eceaea;"></i>
       </div>
       <div class="btn-text">
-        <%# おすすめ本<br>投稿 %>
         投稿する
       </div>
     <% end %>

@@ -18,14 +18,11 @@
             <% end %>
           </div>
         <% end %>  
-
-        <%# 投稿者本人の場合はお気に入りボタンは表示しない 以下どちらもエラーが出る %>
-        <%# <% unless current_user.id == book.user_id %>
-        <%# <% unless user_signed_in? || current_user.id == book.user_id %>
-          <div class="favorite-btn">
-            <i class="fas fa-star"></i>
-          </div>
-        <%# <% end %>
+       
+        <%# 投稿者以外もしくはログアウト状態の場合はお気に入りボタンが表示される %>
+        <%# if !user_signed_in? || book.user_id != current_user.id %>
+          <%= render partial:'favorites/favorite_form', locals: { book: book } %>
+        <%# end %>
 
       <% end %>
 

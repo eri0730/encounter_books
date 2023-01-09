@@ -1,0 +1,7 @@
+<div id="favorite-<%= book.id %>"> 
+  <% if !current_user.nil? && current_user.favorite?(book) %>
+    <%= render partial: 'favorites/unfavorite', locals: { book: book } %>
+  <% else %>
+    <%= render partial: 'favorites/favorite', locals: { book: book } %>
+  <% end %>
+</div>
