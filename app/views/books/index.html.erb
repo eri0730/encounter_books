@@ -16,7 +16,7 @@
 
   <div class="items">
    
-    <%= link_to("#", class: 'like-btn square') do %>
+    <%= link_to(mypage_user_path(current_user.id), class: 'like-btn square') do %>
       <div class="btn-icon">
         <i class="fas fa-star", style="color: #eceaea;"></i>
       </div>
