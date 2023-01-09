@@ -19,8 +19,8 @@
           </div>
         <% end %>  
        
-       <%# 投稿者以外にお気に入りボタンが表示される %>
-        <%# if book.user_id != current_user.id %>
+        <%# 投稿者以外もしくはログアウト状態の場合はお気に入りボタンが表示される %>
+        <%# if !user_signed_in? || book.user_id != current_user.id %>
           <%= render partial:'favorites/favorite_form', locals: { book: book } %>
         <%# end %>
 
