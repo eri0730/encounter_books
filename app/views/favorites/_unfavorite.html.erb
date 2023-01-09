@@ -1,5 +1,4 @@
-<%# <%= link_to "/favorites/#{@book.id}/destroy", method: :post, class: 'unlike', remote: true do %>
-<%= link_to "/favorites/#{book.id}/destroy", method: :delete, class: 'unlike', remote: true do %>
+<%= link_to destroy_favorite_path(book), method: :delete, class: 'unlike', remote: true do %>
   <div class="favorite-btn">
     <i class="fas fa-star"></i>
   </div>

@@ -1,4 +1,4 @@
-<%= link_to "/favorites/#{book.id}/create", method: :post, class: 'like', remote: true do %>
+<%= link_to create_favorite_path(book), method: :post, class: 'like', remote: true do %>
   <div class="favorite-btn">
     <i class="fas fa-star"></i>
   </div>
