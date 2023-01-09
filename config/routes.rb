@@ -2,12 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "books#index"
   resources :books
-  # resources :books do
-    # resources :favorites, only: [:create, :destroy]
-  # end  
   resources :users, only: :show
-  post   "favorites/:book_id/create"  => "favorites#create"
-  delete "favorites/:book_id/destroy" => "favorites#destroy"
+
+  post 'favorite/:id' => 'favorites#create', as: 'create_favorite'
+  delete 'favorite/:id' => 'favorites#destroy', as: 'destroy_favorite'
 
 
 end
