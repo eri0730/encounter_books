@@ -9,10 +9,8 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
 
-
   # 現在のユーザーがお気に入り登録してたらtrueを返す
   def favorite?(book)
     !Favorite.find_by(user_id: id, book_id: book.id).nil?
   end
-
 end

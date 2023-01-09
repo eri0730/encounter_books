@@ -3,12 +3,11 @@ class FavoritesController < ApplicationController
   # before_action :authenticate_user!, only: [:create, :destroy]
   before_action :book_params, only: [:create, :destroy]
 
-
   def create
-    if @book.user_id != current_user.id     
-      Favorite.create(user_id: current_user.id, book_id: params[:id])
-    end
- end
+    return unless @book.user_id != current_user.id
+
+    Favorite.create(user_id: current_user.id, book_id: params[:id])
+  end
 
   def destroy
     Favorite.find_by(user_id: current_user.id, book_id: params[:id]).destroy
@@ -19,5 +18,4 @@ class FavoritesController < ApplicationController
   def book_params
     @book = Book.find(params[:id])
   end
-
 end
