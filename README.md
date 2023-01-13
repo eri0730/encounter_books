@@ -46,7 +46,7 @@ https://docs.google.com/spreadsheets/d/1WXfXYkpeSkjUIkqUKWsTtWgf4gCRJXjZbfa6vgMo
 
 # 実装した機能についての画像やGIFおよびその説明
 ## トップページ(一覧ページ)
-[![Image from Gyazo](https://i.gyazo.com/bff7de36547590760568223823a46724.gif)](https://gyazo.com/bff7de36547590760568223823a46724)
+[![Image from Gyazo](https://i.gyazo.com/6eb660a8cd458b27216decdb5ea0e8fa.jpg)](https://gyazo.com/6eb660a8cd458b27216decdb5ea0e8fa)
 
 <br>
 
@@ -72,7 +72,7 @@ https://docs.google.com/spreadsheets/d/1WXfXYkpeSkjUIkqUKWsTtWgf4gCRJXjZbfa6vgMo
 <br>
 
 ## 読みたい本の一覧表示
-[![Image from Gyazo](https://i.gyazo.com/e660d5deddbba48af79ffc16c2101fe8.gif)](https://gyazo.com/e660d5deddbba48af79ffc16c2101fe8)
+[![Image from Gyazo](https://i.gyazo.com/d83c38b888823d789c030aa0812c122e.jpg)](https://gyazo.com/d83c38b888823d789c030aa0812c122e)
 トップページ右下の読みたいボタンを押すと、お気に入り登録した本の一覧が表示されます。
 <br>
 <br>
