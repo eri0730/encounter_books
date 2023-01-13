@@ -72,7 +72,7 @@ https://docs.google.com/spreadsheets/d/1WXfXYkpeSkjUIkqUKWsTtWgf4gCRJXjZbfa6vgMo
 <br>
 
 ## 読みたい本の一覧表示
-[![Image from Gyazo](https://i.gyazo.com/d83c38b888823d789c030aa0812c122e.jpg)](https://gyazo.com/d83c38b888823d789c030aa0812c122e)
+[![Image from Gyazo](https://i.gyazo.com/708211aa6a58e79686d7f6910f85145f.png)](https://gyazo.com/708211aa6a58e79686d7f6910f85145f)
 トップページ右下の読みたいボタンを押すと、お気に入り登録した本の一覧が表示されます。
 <br>
 <br>
