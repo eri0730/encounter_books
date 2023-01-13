@@ -20,6 +20,7 @@ http://18.180.143.138/
 - パスワード：111111
 <br>
 <br>
+
 # 利用方法
 ## 本に出会う
 1. トップページのヘッダーからユーザー新規登録を行う
@@ -46,7 +47,7 @@ https://docs.google.com/spreadsheets/d/1WXfXYkpeSkjUIkqUKWsTtWgf4gCRJXjZbfa6vgMo
 # 実装した機能についての画像やGIFおよびその説明
 ## トップページ(一覧ページ)
 [![Image from Gyazo](https://i.gyazo.com/ae1bee86de27604f2672c59a00a3a430.gif)](https://gyazo.com/ae1bee86de27604f2672c59a00a3a430)
-<br>
+
 <br>
 
 ## 推し本の共有(投稿機能)
@@ -73,6 +74,7 @@ https://docs.google.com/spreadsheets/d/1WXfXYkpeSkjUIkqUKWsTtWgf4gCRJXjZbfa6vgMo
 ## 読みたい本の一覧表示
 [![Image from Gyazo](https://i.gyazo.com/31911a5313caaece0c4839e227697ea6.gif)](https://gyazo.com/31911a5313caaece0c4839e227697ea6)
 トップページ右下の読みたいボタンを押すと、お気に入り登録した本の一覧が表示されます。
+
 <br>
 <br>
 
